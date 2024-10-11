@@ -1,9 +1,14 @@
 from flask import Flask, render_template
-app = Flask(__name__)
 
-@app.route('/')
-def main():
-    return "Hello World!"
+def create_app():
+    app = Flask(__name__)
+
+    @app.route('/')
+    def main():
+        return "Hello World!"
+
+    return app
 
 if __name__ == '__main__':
-    app.run(debug=True);
+    app = create_app()
+    app.run(debug=True)
