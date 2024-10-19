@@ -1,0 +1,67 @@
+body {
+    background-color: #eef2f5;  /* М'який фон для більш комфортного читання */
+    font-family: 'Arial', sans-serif;  /* Легкий і сучасний шрифт */
+    line-height: 1.6;  /* Комфортний інтерліньяж для тексту */
+    color: #333;  /* Темно-сірий текст для кращого контрасту */
+}
+
+/* Заголовки */
+h2 {
+    color: #007bff;  /* Насичений синій для заголовків */
+    font-weight: bold;  /* Виділені заголовки */
+    border-bottom: 2px solid #007bff;  /* Підкреслення для акценту */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Списки */
+ul.list-group {
+    padding: 0;
+    margin: 0;
+}
+
+ul.list-group li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;  /* Закруглені краї для естетики */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul.list-group li:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Стилізація для посилань */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Зображення */
+img.img-fluid {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Секції */
+section {
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
