@@ -1,15 +1,13 @@
 from flask import Flask
+app = Flask(__name__)
 
-def create_app():
-    app = Flask(__name__)
+@app.route('/')
+def main():
+    return 'Hello, world!'
 
-    @app.route('/')
-    def main():
-        return "Hello World!"
-
-    return app
-
-app = create_app()
+@app.route('/homepage')
+def home():
+    return f"This is your homepage :) "
 
 if __name__ == '__main__':
     app.run(debug=True)
