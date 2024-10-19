@@ -1,67 +1,56 @@
+/* Загальні стилі */
 body {
-    background-color: #eef2f5;  /* М'який фон для більш комфортного читання */
-    font-family: 'Arial', sans-serif;  /* Легкий і сучасний шрифт */
-    line-height: 1.6;  /* Комфортний інтерліньяж для тексту */
-    color: #333;  /* Темно-сірий текст для кращого контрасту */
+    background-color: #b3c5e1;  /* М'який блакитний фон */
+    font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
-/* Заголовки */
-h2 {
-    color: #007bff;  /* Насичений синій для заголовків */
-    font-weight: bold;  /* Виділені заголовки */
-    border-bottom: 2px solid #007bff;  /* Підкреслення для акценту */
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+/* Хедер */
+header .navbar {
+    background-color: #5c7798;  /* Насичений синій для навігації */
 }
 
-/* Списки */
-ul.list-group {
-    padding: 0;
-    margin: 0;
-}
-
-ul.list-group li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;  /* Закруглені краї для естетики */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-ul.list-group li:hover {
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Стилізація для посилань */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Зображення */
-img.img-fluid {
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-/* Секції */
-section {
-    padding: 20px 0;
-}
-
-footer {
-    background-color: #343a40;
+header .nav-link {
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-size: 14px;
+    margin-right: 20px;
+}
+
+header .nav-link.active {
+    color: #ffdd57;  /* Жовтий для активного посилання */
+}
+
+header .nav-link:hover {
+    color: #ffdd57;
+}
+
+/* Кастомні стилі для футера */
+.custom-footer {
+    background-color: #1f2833;  /* Темно-синій/чорний фон */
+    padding: 40px 0;  /* Просторий футер */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);  /* Тінь для футера */
+    font-size: 16px;  /* Збільшений розмір тексту */
+}
+
+.custom-footer a {
+    color: #66fcf1;  /* М'який бірюзовий для посилань */
+    text-decoration: none;  /* Вимкнене підкреслення */
+    transition: color 0.3s ease;  /* Плавний перехід кольору при наведенні */
+}
+
+.custom-footer a:hover {
+    color: #45a29e;  /* Темніший відтінок бірюзового при наведенні */
+}
+
+.custom-footer p {
+    margin-bottom: 0;  /* Немає зайвого відступу після параграфів */
+    line-height: 1.6;  /* Комфортний інтерліньяж */
+}
+
+.custom-footer .container {
+    max-width: 960px;  /* Фіксована ширина для гарного форматування на великих екранах */
+}
+
+/* Інші стилі */
+main {
+    min-height: calc(100vh - 200px); /* Мінімальна висота для контенту */
 }
