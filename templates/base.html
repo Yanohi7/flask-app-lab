@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Website{% endblock %}</title>
+    <title>{{ page_title }}</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/resume">Resume</a></li>
-            </ul>
-        </nav>
-    </header>
+        {% include 'header.html' %}
 
     <main>
         {% block content %}
@@ -22,7 +15,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 My Website</p>
+        {% include 'footer.html' %}
     </footer>
 </body>
 </html>

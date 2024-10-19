@@ -14,7 +14,7 @@ def home():
 
 @app.route('/resume')
 def get_resume():
-    return render_template("resume.html")
+    return render_template("resume.html", page_title="Моє резюме")
 
 if __name__ == '__main__':
     app.run(debug=True)
