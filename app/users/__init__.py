@@ -8,6 +8,3 @@ bp = Blueprint("user_name",
 
 from . import views
 
-# Демо-дані для автентифікації
-DEMO_USERNAME = "admin"
-DEMO_PASSWORD = "password123"
