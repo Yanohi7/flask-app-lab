@@ -49,7 +49,8 @@ def login():
 def get_profile():
     if "username" in session:
         username = session["username"]
-        return render_template("profile.html", username=username)
+        color_scheme = request.cookies.get("color_scheme", "light")
+        return render_template("profile.html", username=username, color_scheme=color_scheme)
     flash("Будь ласка, увійдіть, щоб переглянути профіль.", "danger")
     return redirect(url_for("user_name.login"))
 
@@ -58,6 +59,16 @@ def get_profile():
 def logout():
     session.pop("username", None)
     flash("Ви вийшли із системи.", "info")
+    return redirect(url_for("user_name.login"))
+
+@bp.route("/set_color/<string:scheme>")
+def set_color(scheme):
+    if "username" in session:
+        response = make_response(redirect(url_for("user_name.get_profile")))
+        response.set_cookie("color_scheme", scheme, max_age=30*24*60*60)  # Зберігаємо вибір на 30 днів
+        flash(f"Колірна схема змінена на '{scheme}'", "info")
+        return response
+    flash("Вам потрібно увійти, щоб змінити кольорову схему.", "danger")
     return redirect(url_for("user_name.login"))
 
 @bp.route("/add_cookie", methods=["POST"])
@@ -73,14 +84,15 @@ def add_cookie():
     flash("Вам потрібно увійти, щоб керувати кукі.", "danger")
     return redirect(url_for("user_name.login"))
 
-@bp.route("/delete_cookie/<key>", methods=["POST"])
-def delete_cookie(key):
+@bp.route("/delete_cookie_by_key", methods=["POST"])
+def delete_cookie_by_key():
     if "username" in session:
+        key = request.form.get("cookie_key")  # Отримуємо ключ з форми
         response = make_response(redirect(url_for("user_name.get_profile")))
         response.set_cookie(key, "", expires=0)
         flash(f"Кука '{key}' видалена успішно!", "info")
         return response
-    flash("Вам потрібно увійти, щоб керувати кукі.", "danger")
+    flash("Вам потрібно увійти, щоб видалити кукі.", "danger")
     return redirect(url_for("user_name.login"))
 
 @bp.route("/delete_all_cookies", methods=["POST"])
