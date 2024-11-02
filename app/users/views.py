@@ -101,7 +101,7 @@ def delete_all_cookies():
         response = make_response(redirect(url_for("user_name.get_profile")))
         for key in request.cookies.keys():
             response.set_cookie(key, "", expires=0)
-        flash("Всі кукі видалено успішно!", "info")
+        flash("Всі кукі видалені успішно!", "info")
         return response
     flash("Вам потрібно увійти, щоб керувати кукі.", "danger")
     return redirect(url_for("user_name.login"))
