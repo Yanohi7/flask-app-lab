@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "wwqwe",
+        "content": "wwww",
+        "category": "science",
+        "is_active": true,
+        "publication_date": "2024-11-05"
+    },
+    {
+        "id": 2,
+        "title": "json_test",
+        "content": "json\r\njson\r\njson\r\njson\r\njson",
+        "category": "tech",
+        "is_active": true,
+        "publication_date": "2024-11-05"
+    }
+]
