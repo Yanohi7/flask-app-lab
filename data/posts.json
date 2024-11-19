@@ -30,5 +30,31 @@
         "category": "lifestyle",
         "is_active": true,
         "publication_date": "2024-11-05"
+    },
+    {
+        "id": 5,
+        "title": "ww",
+        "content": "wwww",
+        "category": "tech",
+        "is_active": true,
+        "publication_date": "2024-11-05"
+    },
+    {
+        "id": 6,
+        "title": "wwawd",
+        "content": "wwww",
+        "category": "tech",
+        "author": "asddw",
+        "is_active": true,
+        "publication_date": "2024-11-05"
+    },
+    {
+        "id": 7,
+        "title": "New",
+        "content": "longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggvv",
+        "category": "science",
+        "author": "Unknown",
+        "is_active": true,
+        "publication_date": "2024-11-05"
     }
 ]
