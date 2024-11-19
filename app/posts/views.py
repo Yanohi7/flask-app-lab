@@ -30,6 +30,7 @@ def add_post():
             "title": title,
             "content": content,
             "category": form.category.data,
+            "author": form.author.data,
             "is_active": True,
             "publication_date": "2024-11-05"
         }
