@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Post {{ post.id }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p><strong>Category:</strong> {{ post.category or 'Uncategorized' }}</p>
+    <p><strong>Author:</strong> {{ post.author or 'Unknown' }}</p>
+    <p><strong>Published:</strong> {{ post.posted.strftime('%Y-%m-%d') if post.posted else 'N/A' }}</p>
+    <a href="{{ url_for('posts.get_posts') }}" class="btn btn-primary mt-3">Back to All Posts</a>
+</div>
+{% endblock %}
