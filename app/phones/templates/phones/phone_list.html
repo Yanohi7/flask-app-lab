@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Phone List{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Список телефонів</h1>
+
+<form class="d-flex mb-4" method="POST" action="{{ url_for('phones.search_phone') }}">
+    <input type="text" name="search" class="form-control me-2" placeholder="Пошук телефону">
+    <button type="submit" class="btn btn-primary">Пошук</button>
+</form>
+
+<div class="d-flex justify-content-between mb-4">
+    <div>
+        <a href="{{ url_for('phones.phone_list', sort_by='price', order='asc') }}" class="btn btn-outline-secondary btn-sm">Сортувати за ціною ↑</a>
+        <a href="{{ url_for('phones.phone_list', sort_by='price', order='desc') }}" class="btn btn-outline-secondary btn-sm">Сортувати за ціною ↓</a>
+        <a href="{{ url_for('phones.phone_list', sort_by='name', order='asc') }}" class="btn btn-outline-secondary btn-sm">Сортувати за алфавітом ↑</a>
+        <a href="{{ url_for('phones.phone_list', sort_by='name', order='desc') }}" class="btn btn-outline-secondary btn-sm">Сортувати за алфавітом ↓</a>
+    </div>
+
+    <a href="{{ url_for('phones.add_phone') }}" class="btn btn-success">Додати телефон</a>
+</div>
+
+<ul class="list-group">
+    {% for phone in phones %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+            <strong>{{ phone.name }}</strong> - {{ phone.description | truncate(12) }} - ${{ phone.price }}
+            <br><small>Категорія: {{ phone.category.category_name }}</small>
+        </div>
+        <div>
+            <a href="{{ url_for('phones.phone_detail', id=phone.id) }}" class="btn btn-info btn-sm">Переглянути</a>
+            {% if session.get('username') == phone.added_by %}
+            <a href="{{ url_for('phones.edit_phone', id=phone.id) }}" class="btn btn-warning btn-sm">Редагувати</a>
+            <form action="{{ url_for('phones.delete_phone', id=phone.id) }}" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Ви впевнені, що хочете видалити телефон?');">Видалити</button>
+            </form>
+            {% else %}
+            <button class="btn btn-warning btn-sm"
+                     title="Тільки власник може редагувати цей запис"
+                    disabled>Редагувати</button>
+            <button class="btn btn-danger btn-sm"
+                     title="Тільки власник може видаляти цей запис"
+                    disabled>Видалити</button>
+            {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

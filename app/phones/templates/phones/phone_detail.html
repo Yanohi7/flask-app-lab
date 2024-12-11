@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Деталі телефону{% endblock %}
+{% block content %}
+    <h1 class="mb-4">Деталі телефону</h1>
+
+    <table class="table">
+       <tr>
+            <th>Категорія:</th>
+            <td>{{ phone.category.category_name }}</td>
+        </tr>
+        <tr>
+            <th>Назва:</th>
+            <td>{{ phone.name }}</td>
+        </tr>
+        <tr>
+            <th>Опис:</th>
+            <td>{{ phone.description }}</td>
+        </tr>
+        <tr>
+            <th>Ціна:</th>
+            <td>${{ phone.price }}</td>
+        </tr>
+    </table>
+
+    <div>
+    {% if session.get('username') == phone.added_by %}
+        <a href="{{ url_for('phones.edit_phone', id=phone.id) }}" class="btn btn-warning">Редагувати</a>
+        <form action="{{ url_for('phones.delete_phone', id=phone.id) }}" method="post" style="display:inline;">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Ви впевнені, що хочете видалити цей телефон?');">Видалити</button>
+        </form>
+        {% else %}
+<button disabled class="btn btn-warning"
+    title="Тільки власник може редагувати цей запис">Редагувати</button>
+<button disabled class="btn btn-danger"
+    title="Тільки власник може видаляти цей запис">Видалити</button>
+      <a href="{{ url_for('phones.phone_list') }}" class="btn btn-secondary">Назад до списку</a>
+        {% endif %}
+    </div>
+{% endblock %}
